@@ -1,0 +1,10 @@
+Package: ap2client
+Section: embedded
+Priority: standard
+Homepage: https://github.com/dernasherbrezon/ap2client
+Architecture: armhf
+Maintainer: Andrey Rodionov <dernasherbrezon@gmail.com>
+Description: Switch RPi WiFi from access point mode (master) to client mode
+ Monitors wpa_supplicant.conf file for new networks. Once added, will try
+ to connect to it. If success, then access point is disabled. If failure
+ then switch back to access point.
