@@ -16,11 +16,13 @@ function onConnected() {
 		log "connected as access point"
 		return 0
 	fi	
-	dhclient ${INTERFACE}
 	# ensure hostapd stopped
 	# it won't be possible to connect in client mode
 	# and remain access point
 	systemctl stop hostapd
+	systemctl stop dnsmasq
+
+	dhclient ${INTERFACE}
 	return 0
 }
 
@@ -41,6 +43,7 @@ function onDisconnected() {
 	done
 	if [ ${CONNECTED} -eq 0 ]; then
 		log "not reconnected within timeout. init access point mode"
+		systemctl start dnsmasq
 		systemctl start hostapd
 	fi
 	return 0
