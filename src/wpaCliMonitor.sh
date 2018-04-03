@@ -11,6 +11,11 @@ CONNECTED=0
 function onConnected() { 
 	log "wifi connected"
 	CONNECTED=1
+	local IS_MASTER_MODE=`iwconfig ${INTERFACE} | grep "Mode:Master" | wc -l`
+	if [ ${IS_MASTER_MODE} -eq 1 ]; then
+		log "connected as access point"
+		return 0
+	fi	
 	dhclient ${INTERFACE}
 	# ensure hostapd stopped
 	# it won't be possible to connect in client mode
