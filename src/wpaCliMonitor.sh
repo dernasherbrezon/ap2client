@@ -45,6 +45,8 @@ function onDisconnected() {
 		log "not reconnected within timeout. init access point mode"
 		systemctl start dnsmasq
 		systemctl start hostapd
+		
+		dhclient ${INTERFACE}
 	fi
 	return 0
 }

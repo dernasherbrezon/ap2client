@@ -1,0 +1,4 @@
+systemctl enable ap2client.service
+if [ -d /run/systemd/system ]; then
+	systemctl start ap2client.service
+fi

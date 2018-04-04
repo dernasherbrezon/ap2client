@@ -5,7 +5,8 @@ set -e
 DATE=`date +%s`
 
 echo "Version: ${DATE}" >> debian/DEBIAN/control
-cp src/*.sh /bin/ap2client
+mkdir -p debian/usr/share/ap2client
+cp src/*.sh debian/usr/share/ap2client
 
 dpkg-deb --build debian ap2client-${DATE}.deb
 

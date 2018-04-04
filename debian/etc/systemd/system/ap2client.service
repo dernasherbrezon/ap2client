@@ -1,0 +1,11 @@
+[Unit]
+Description=ap2client Service
+After=network.target
+
+[Service]
+WorkingDirectory=/usr/share/ap2client
+ExecStart=/usr/share/ap2client/ap2client.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
