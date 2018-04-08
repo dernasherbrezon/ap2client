@@ -50,7 +50,7 @@ function onDisconnected() {
 	return 0
 }
 
-case "$2" in
+case "${2}" in
     CONNECTED)
         onConnected
         ;;
