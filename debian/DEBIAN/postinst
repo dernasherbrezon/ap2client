@@ -5,6 +5,7 @@ fi
 
 setup() {
 	if [ -e $2 ]; then
+		echo "backing ip: $2"
 		cp $2 $2.backup
 	fi
 	cp $1 $2
