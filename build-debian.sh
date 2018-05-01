@@ -15,4 +15,6 @@ openssl aes-256-cbc -K $encrypted_806ce29048dc_key -iv $encrypted_806ce29048dc_i
 
 gpg --fast-import codesigning2.asc
 
+gpg --list-keys
+
 deb-s3 upload -a armhf -c r2cloud --access-key-id=${AWS_ACCESS_KEY} --secret-access-key=${AWS_SECRET_ACCESS_KEY}  -m main --sign=A5A70917 --gpg-options="--passphrase ${GPG_PASSPHRASE} --digest-algo SHA256" --bucket r2cloud *.deb
