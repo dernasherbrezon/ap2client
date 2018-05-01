@@ -10,7 +10,6 @@ setup() {
 	cp $1 $2
 }
 
-setup /etc/ap2client/dhcpcd.conf /etc/dhcpcd.conf
 setup /etc/ap2client/dnsmasq.conf /etc/dnsmasq.conf
 setup /etc/ap2client/hostapd.conf /etc/hostapd/hostapd.conf
 setup /etc/ap2client/hostapd /etc/default/hostapd
