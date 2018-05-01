@@ -23,7 +23,7 @@ function onConfigurationChanged() {
 # check configuration file on startup
 onConfigurationChanged
 
-fswatch -0 -x --event Updated --latency 2.0 -o ${WPA_SUPPLICANT_CONFIG} | 
-while read -d "" event; do
+inotifywait -m -r -e modify ${WPA_SUPPLICANT_CONFIG} |
+while read output; do
 	onConfigurationChanged
 done

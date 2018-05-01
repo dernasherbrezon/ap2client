@@ -7,6 +7,7 @@ DATE=`date +%s`
 echo "Version: ${DATE}" >> debian/DEBIAN/control
 mkdir -p debian/usr/share/ap2client
 cp src/*.sh debian/usr/share/ap2client
+chmod +x debian/DEBIAN/postinst
 
 dpkg-deb --build debian ap2client-${DATE}.deb
 

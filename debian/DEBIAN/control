@@ -2,7 +2,7 @@ Package: ap2client
 Section: embedded
 Priority: standard
 Homepage: https://github.com/dernasherbrezon/ap2client
-Depends: hostapd, dnsmasq, fswatch
+Depends: hostapd, dnsmasq, inotify-tools
 Architecture: armhf
 Maintainer: Andrey Rodionov <dernasherbrezon@gmail.com>
 Description: Switch RPi WiFi from access point mode to client mode

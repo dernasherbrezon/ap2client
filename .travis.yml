@@ -4,6 +4,5 @@ before_install:
   - gem install deb-s3
 
 script:
-  - ./src/test/bash/bash_unit.sh ./src/test/bash/test_core.sh
   - sh build-debian.sh
   
