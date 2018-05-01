@@ -3,7 +3,7 @@ if [ -d /run/systemd/system ]; then
 	systemctl start ap2client.service
 fi
 
-function setup() {
+setup() {
 	if [ -e $2 ]; then
 		cp $2 $2.backup
 	fi
